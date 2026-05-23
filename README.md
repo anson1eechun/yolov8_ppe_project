@@ -127,6 +127,29 @@ py predict.py path/to/images/
 
 推論同時寫入 YOLO 格式標註 txt（`save_txt=True`, `save_conf=True`）。
 
+#### 推論效果對照
+
+以下以專案內建的 `test_01.png` 為例，展示 `predict.py` 的輸入與輸出：
+
+```bash
+py predict.py test_01.png
+```
+
+| 原始輸入 | 推論輸出 |
+|:--------:|:--------:|
+| ![原始圖片](test_01.png) | ![推論結果](runs/detect/predict/test_01.jpg) |
+| `test_01.png` | `runs/detect/predict/test_01.jpg` |
+
+**本例偵測結果（conf ≥ 0.25）：**
+
+| 類別 | 信心度 | 判定 |
+|------|--------|------|
+| `helmet` | 0.75 | 已配戴安全帽 |
+| `goggles` | 0.56 | 偵測到護目鏡（此例為一般眼鏡，模型可能與護目鏡類別混淆） |
+| `no-vest` | 0.88 | 未穿反光背心 |
+
+框線顏色由 Ultralytics 依類別自動分配；標籤格式為 `類別 信心度`。標註座標另存於 `runs/detect/predict/labels/test_01.txt`。
+
 #### predict_video.py
 
 提供額外 CLI 參數：
@@ -257,5 +280,6 @@ seaborn>=0.12.0
 
 ---
 
+## 授權
 
 - 資料集：[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（Roboflow PPE Detection）
