@@ -4,13 +4,6 @@ __pycache__/
 venv/
 env/
 
-*.pt
-!models/yolov8n.pt
-runs/
-
-PPE detection.v1i.yolov8/
-*.mp4
-*.avi
 
 .vscode/
 .idea/
