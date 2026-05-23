@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 10
+names: ['boots', 'gloves', 'goggles', 'helmet', 'no-boots', 'no-gloves', 'no-goggles', 'no-helmet', 'no-vest', 'vest']
+
+roboflow:
+  workspace: testcasque
+  project: ppe-detection-qlq3d
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/testcasque/ppe-detection-qlq3d/dataset/1
